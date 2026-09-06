@@ -1,11 +1,13 @@
 package ecommerce;
 
 public class Electronics extends Product {
-    public Electronics(int id, String name, double price) {
-        super(id, name, price);
+    private String brand;
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public void warranty() {
-        System.out.println("1 year warranty available");
+    public void displayElectronicsDetails() {
+        System.out.println("Brand: " + brand);
     }
 }
