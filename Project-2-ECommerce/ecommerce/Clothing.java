@@ -1,11 +1,13 @@
 package ecommerce;
 
 public class Clothing extends Product {
-    public Clothing(int id, String name, double price) {
-        super(id, name, price);
+    private String size;
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
-    public void sizeInfo() {
-        System.out.println("Available sizes: S, M, L, XL");
+    public void displayClothingDetails() {
+        System.out.println("Size: " + size);
     }
 }
