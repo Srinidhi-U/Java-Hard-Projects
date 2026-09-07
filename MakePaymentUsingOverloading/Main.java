@@ -1,39 +1,27 @@
 import java.util.Scanner;
 
 class Main {
-
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
-        String details = sc.nextLine();
-
-        String[] data = details.split(",");
-
-        String stageEvent = data[0];
-        String customer = data[1];
-        Integer noOfSeats = Integer.parseInt(data[2]);
-
-        TicketBooking t = new TicketBooking(stageEvent, customer, noOfSeats);
+        String[] data = sc.nextLine().split(",");
+        TicketBooking t = new TicketBooking(
+            data[0], data[1], Integer.parseInt(data[2]));
 
         int choice = sc.nextInt();
 
         if (choice == 1) {
-            Double amount = sc.nextDouble();
-            t.makePayment(amount);
-
+            t.makePayment(sc.nextDouble());
         } else if (choice == 2) {
             Double amount = sc.nextDouble();
-            String walletNumber = sc.next();
-            t.makePayment(walletNumber, amount);
-
+            String wallet = sc.next();
+            t.makePayment(wallet, amount);
         } else if (choice == 3) {
             String name = sc.next();
             Double amount = sc.nextDouble();
-            String creditCard = sc.next();
+            String card = sc.next();
             String ccv = sc.next();
-            t.makePayment(creditCard, ccv, name, amount);
-
+            t.makePayment(card, ccv, name, amount);
         } else {
             System.out.println("Invalid choice");
         }
